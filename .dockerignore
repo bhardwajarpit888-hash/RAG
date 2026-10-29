@@ -1,0 +1,6 @@
+.env
+api.env
+.venv
+data/vector_store*
+__pycache__
+.git

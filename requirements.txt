@@ -1,0 +1,16 @@
+# Minimum versions (not exact pins). After your app runs fine on your machine, run
+#   pip freeze > requirements.lock.txt
+# and keep that file too, so anyone can reproduce your exact setup.
+chromadb>=0.5
+sentence-transformers>=2.7
+langchain-core>=0.2
+langchain-text-splitters>=0.2
+langchain-groq>=0.1
+pypdf>=4.0
+python-dotenv>=1.0
+streamlit>=1.35
+pytest>=8.0
+
+# Optional LLM providers (install only if you use them, then set LLM_PROVIDER in .env):
+# langchain-openai
+# langchain-ollama

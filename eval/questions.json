@@ -1,0 +1,192 @@
+[
+  {
+    "question": "What are the three paradigms of RAG?",
+    "source": "research2.pdf",
+    "pages": [
+      2,
+      3,
+      4
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What drawbacks does Naive RAG have?",
+    "source": "research2.pdf",
+    "pages": [
+      2,
+      3
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What chunking strategy is most common in RAG indexing?",
+    "source": "research2.pdf",
+    "pages": [
+      8
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What is the lost in the middle problem?",
+    "source": "research2.pdf",
+    "pages": [
+      10
+    ],
+    "answerable": true
+  },
+  {
+    "question": "How does reranking improve retrieved context?",
+    "source": "research2.pdf",
+    "pages": [
+      4,
+      10
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What is HyDE?",
+    "source": "research2.pdf",
+    "pages": [
+      5,
+      9
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What are reflection tokens in Self-RAG?",
+    "source": "research2.pdf",
+    "pages": [
+      12
+    ],
+    "answerable": true
+  },
+  {
+    "question": "When does FLARE trigger retrieval?",
+    "source": "research2.pdf",
+    "pages": [
+      11,
+      12
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What are the four abilities used to evaluate a RAG system?",
+    "source": "research2.pdf",
+    "pages": [
+      12
+    ],
+    "answerable": true
+  },
+  {
+    "question": "Which metrics are used to measure retrieval quality?",
+    "source": "research2.pdf",
+    "pages": [
+      12
+    ],
+    "answerable": true
+  },
+  {
+    "question": "Which tools can automatically evaluate RAG systems?",
+    "source": "research2.pdf",
+    "pages": [
+      14
+    ],
+    "answerable": true
+  },
+  {
+    "question": "Why is RAG still needed when LLMs support long context?",
+    "source": "research2.pdf",
+    "pages": [
+      14
+    ],
+    "answerable": true
+  },
+  {
+    "question": "How does RAG compare with fine-tuning?",
+    "source": "research2.pdf",
+    "pages": [
+      5
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What is query routing in RAG?",
+    "source": "research2.pdf",
+    "pages": [
+      9
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What is Small2Big retrieval?",
+    "source": "research2.pdf",
+    "pages": [
+      8
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What does answer faithfulness mean?",
+    "source": "research2.pdf",
+    "pages": [
+      12
+    ],
+    "answerable": true
+  },
+  {
+    "question": "What is iterative retrieval?",
+    "source": "research2.pdf",
+    "pages": [
+      10
+    ],
+    "answerable": true
+  },
+  {
+    "question": "How can a knowledge graph be used as an index?",
+    "source": "research2.pdf",
+    "pages": [
+      8
+    ],
+    "answerable": true
+  },
+  {
+    "question": "Who is the prime minister of India?",
+    "answerable": false
+  },
+  {
+    "question": "How do I bake a chocolate cake?",
+    "answerable": false
+  },
+  {
+    "question": "What is the capital of France?",
+    "answerable": false
+  },
+  {
+    "question": "What is the price of Bitcoin today?",
+    "answerable": false
+  },
+  {
+    "question": "Who won the 2022 FIFA World Cup?",
+    "answerable": false
+  },
+  {
+    "question": "How do I deploy a RAG application with Kubernetes?",
+    "answerable": false
+  },
+  {
+    "question": "What are the pricing plans of the OpenAI API?",
+    "answerable": false
+  },
+  {
+    "question": "How does positional encoding work in transformers?",
+    "answerable": false
+  },
+  {
+    "question": "What is the best GPU for training large language models?",
+    "answerable": false
+  },
+  {
+    "question": "How do I containerize a Python app with Docker?",
+    "answerable": false
+  }
+]

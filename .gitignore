@@ -1,0 +1,17 @@
+# secrets - never upload these
+.env
+api.env
+*.env
+
+# generated data
+data/vector_store*/
+data/pdfs/*
+!data/pdfs/.gitkeep
+
+# python / jupyter
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
