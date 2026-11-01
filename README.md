@@ -3,7 +3,7 @@
 Ask questions about your PDFs and get answers **with page citations**.
 If the answer is not in the documents, the app says so instead of making something up.
 
-![Demo](docs/demo.png)
+![Demo](docs/demo.jpeg)
 
 <!-- Live demo: add your Streamlit Community Cloud link here once deployed -->
 
@@ -20,20 +20,35 @@ Most RAG demos stop at "it returns an answer". This one focuses on **measuring**
 
 ## How it works
 
+![Architecture](docs/architecture.png)
+
+<details>
+<summary>Same diagram as editable text (Mermaid)</summary>
+
 ```mermaid
-flowchart LR
-    A[PDF / TXT] --> B[Loader<br/>text + page numbers]
-    B --> C[Chunker<br/>drops bibliography chunks]
-    C --> D[Embeddings<br/>MiniLM, normalized]
-    D --> E[(ChromaDB<br/>cosine)]
-    Q[Question] --> F[Vector search<br/>top 30 candidates]
-    E --> F
-    F --> R[Cross-encoder reranker<br/>keep top 5 above threshold]
-    R --> G{Any relevant chunk?}
-    G -- no --> H[Say: not found<br/>LLM is NOT called]
-    G -- yes --> I[LLM with strict prompt]
-    I --> J[Answer + numbered citations + sources]
+flowchart TB
+    subgraph IDX["1. Indexing (once per file, safe to re-run)"]
+        direction LR
+        A["PDF / TXT"] --> B["Loader<br/>text + page numbers"]
+        B --> C["Chunker<br/>500 chars, drops bibliography"]
+        C --> D["Embeddings<br/>MiniLM, normalized"]
+        D --> E[("ChromaDB<br/>cosine")]
+    end
+
+    subgraph ANS["2. Answering (every question)"]
+        direction LR
+        Q["Question"] --> F["Vector search<br/>top 30"]
+        F --> R["Cross-encoder reranker<br/>keep top 5"]
+        R --> G{"Any chunk above<br/>threshold?"}
+        G -- yes --> L["LLM with<br/>strict prompt"]
+        L --> J["Answer + citations<br/>+ sources"]
+        G -- no --> H["Not found<br/>LLM is NOT called"]
+    end
+
+    IDX -.->|stored vectors| ANS
 ```
+
+</details>
 
 1. **Index:** pages are extracted with page numbers, split into ~500-character chunks, bibliography chunks are removed, and the rest are embedded and stored in ChromaDB.
 2. **Retrieve:** the question is embedded, the 30 closest chunks are fetched, and a cross-encoder re-scores each (question, chunk) pair. Chunks below the threshold are dropped.
